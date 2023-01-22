@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MondayMvcTest.Models.Moviedetail>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Movies details</h2>
+<div class="row">
+    <div class="col-md-4">
+        <table class="table table-condensed table-hover">
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    MovieName
+                </th>
+                <th>
+                    DirectorName
+                </th>
+              
+                <th>
+                    GenreName
+                </th>
+                <th>
+                    ReleaseDate
+                </th>
+            </tr>
+            @foreach(var mov in Model)
+            {
+            <tr>
+                <td>@mov.Id</td>
+                <td>@mov.MovieName</td>
+                <td>@mov.DirectorName</td>
+                <td>@mov.GenreName</td>
+                <td>@mov.ReleaseDate</td>
+
+            </tr>
+            }
+        </table>
+
+    </div>
+ </div>
+

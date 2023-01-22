@@ -1,0 +1,39 @@
+﻿@using MondayMvcTest.Models
+@model Moviedetail
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create New Product</h2>
+<hr />
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary()
+    <div class="mb-2">
+        @Html.LabelFor(m => m.MovieName, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.MovieName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MovieName)
+    </div>
+    <div class="mb-2">
+        @Html.LabelFor(m => m.DirectorName, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.DirectorName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DirectorName)
+    </div>
+   
+    <div class="mb-2">
+        @Html.LabelFor(m => m.GenreName, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.GenreName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.GenreName)
+    </div>
+    <div class="mb-2">
+        @Html.LabelFor(m => m.ReleaseDate, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.ReleaseDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ReleaseDate)
+    </div>
+    <div class="mt-2">
+        <input type="submit" id="btnSubmit" class="btn btn-primary" value="Submit" />
+    </div>
+}
